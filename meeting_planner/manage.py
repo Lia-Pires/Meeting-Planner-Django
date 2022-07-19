@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-
-#need to download all the modules again
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
