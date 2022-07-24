@@ -5,8 +5,9 @@ from datetime import datetime
 
 
 
+
 def welcome(request):
-    return HttpResponse("Welcome to the Meeting Planner")
+    return render(request, 'website/home.html', {"message" : "Transmitings From The View Function"})
 
 
 def date(request):
