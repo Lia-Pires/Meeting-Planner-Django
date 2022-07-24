@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from meetings.models import Meeting # type: ignore
 
 
 
 
 
 def welcome(request):
-    return render(request, 'website/home.html', {"message" : "Transmitings From The View Function"})
+    return render(request, 'website/home.html', {"num_meetings" : Meeting.objects.count()})
 
 
 def date(request):
