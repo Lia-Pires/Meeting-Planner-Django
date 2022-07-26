@@ -1,21 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from datetime import datetime
-from meetings.models import Meeting # type: ignore
-
-
-
+from meetings.models import Meeting 
+from django.http import HttpResponse
 
 
 def welcome(request):
-    return render(request, 'website/home.html', {"num_meetings" : Meeting.objects.count()})
+    return render(request, 'website/home.html', {"meetings": Meeting.objects.all()})
 
 
 def date(request):
-    return HttpResponse(f"{str(datetime.now())}")
+    return HttpResponse(f"This page was served at {str(datetime.now())}")
 
 
 def about(request):
-    return HttpResponse("My name is Lia")
-
-
+    return HttpResponse("My Name is Lia Pires")
